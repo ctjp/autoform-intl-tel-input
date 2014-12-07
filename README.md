@@ -33,11 +33,26 @@ In the schema, which will then work with a `quickForm` or `afQuickFields`:
     type: String,
     autoform: {
       type: 'intl-tel-input',
-      autoform: {
-        autoFormat: true,
-        defaultCountry: auto
+      'class': 'form-control',
+      afFieldInput: {
+        inputOptions: {
+          autoFormat: true,
+          defaultCountry: 'auto'
+        }
       }
     }
   }
 }
 ```
+
+Or on the `afFieldInput` component or any component that passes along attributes to `afFieldInput`:
+
+```js
+{{> afQuickField name="tel" type="intl-tel-input"}}
+
+{{> afFormGroup name="tel" type="intl-tel-input"}}
+
+{{> afFieldInput name="tel" type="intl-tel-input"}}
+```
+
+To provide intl-tel-input options, set a `inputOptions` attribute equal to a helper that returns the options object.

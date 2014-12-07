@@ -5,12 +5,20 @@ AutoForm.addInputType('intl-tel-input', {
   }
 });
 
+Template.afIntlTelInput.helpers({
+  atts: function addFormControlAtts() {
+    var atts = _.clone(this.atts);
+    delete atts.inputOptions;
+    return atts;
+  }
+});
+
 Template.afIntlTelInput.rendered = function () {
   var $input = this.$('input');
   var data = this.data;
 
   // instanciate intlTelInput
-  $input.intlTelInput(data.selectOptions);
+  $input.intlTelInput(data.atts.inputOptions);
 
   // set and reactively update values
   this.autorun(function () {
