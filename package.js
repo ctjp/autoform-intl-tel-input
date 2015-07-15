@@ -1,7 +1,7 @@
 Package.describe({
   name: 'ctjp:autoform-intl-tel-input',
   summary: 'Custom input type "intl-tel-input" for AutoForm',
-  version: '0.2.0',
+  version: '0.2.1',
   git: 'https://github.com/ctjp/autoform-intl-tel-input.git'
 });
 
@@ -15,7 +15,7 @@ Package.onUse(function(api) {
     'templating',
 
     // Additional packages
-    'aldeed:autoform@4.0.6'
+    'aldeed:autoform@4.0.0 || 5.0.0'
   ], 'client');
 
   //== Add files
